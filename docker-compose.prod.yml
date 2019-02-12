@@ -1,0 +1,21 @@
+# PROD ENVIRONMENT
+# This docker-compose file will start both the nextjs app and graphql server
+# in an environment that is identical to production.
+# nexjs: http://localhost:3000
+# graphql: http://localhost:4000
+
+version: '3'
+
+services:
+  nextjs:
+    build: .
+    container_name: communities-react-app-prod
+    ports:
+      - 3000:8080
+      - 4000:4000
+
+  graphql:
+    build:
+      context: ../communities-node-api
+    container_name: communities-node-api-prod
+    network_mode: 'service:nextjs'

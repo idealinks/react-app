@@ -1,0 +1,35 @@
+# DEV ENVIRONMENT
+# This docker-compose file will start both the nextjs app, memcached, and graphql server in dev mode.
+# nexjs: http://localhost:3000
+# graphql: http://localhost:4000
+# memcached: http://localhost:11211
+
+version: '3'
+
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: communities-react-app-dev
+    command: npm run dev
+    volumes:
+      - .:/usr/app
+    ports:
+      - 3000:8080
+      - 4000:4000
+      - 11211:11211
+
+  graphql:
+    build:
+      context: ../communities-node-api
+      dockerfile: Dockerfile.dev
+    container_name: communities-node-api-dev
+    command: npm run dev
+    volumes:
+      - ../communities-node-api:/usr/api
+    network_mode: 'service:nextjs'
+
+  memcached:
+    image: 'bitnami/memcached:latest'
+    network_mode: 'service:nextjs'

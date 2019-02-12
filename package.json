@@ -1,0 +1,175 @@
+{
+  "name": "communities-react-app",
+  "version": "0.1.0",
+  "description": "server-side rendered app built on Next.js, and react-apollo for communities",
+  "homepage": "https://github.com/SMG-Digital/communities-react-app#readme",
+  "bugs": {
+    "url": "https://github.com/SMG-Digital/communities-react-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SMG-Digital/communities-react-app.git"
+  },
+  "license": "ISC",
+  "author": "Ryan Johnson <ryan@shakainteractive.com>",
+  "main": "index.js",
+  "scripts": {
+    "analyze": "cross-env ANALYZE=1 next build",
+    "build": "cross-env next build && tsc --project tsconfig.server.json",
+    "dev": "nodemon -L server/index.ts",
+    "docker:exec": "docker exec -it communities-react-app-dev /bin/bash",
+    "docker:prod": "cross-env docker-compose -p communites-react-app-prod -f ./docker-compose.prod.yml",
+    "generate-types": "apollo codegen:generate types --includes ./graphql/**/*.ts --endpoint http://localhost:4000/graphql --target typescript --tagName=gql --outputFlat --addTypename",
+    "prettier": "prettier --write '{pages,server,graphql,app,config,styles}/**/*.{ts,tsx,json,css,md}'",
+    "start": "cross-env NODE_ENV=production node .next/production-server/index.js",
+    "stylelint": "stylelint pages/**/*.css --fix",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "test": "jest",
+    "tslint": "tslint -s node_modules/custom-tslint-formatters/formatters -t grouped '{pages,server}/**/*.ts?(x)'",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "ignore": [
+      "./package-lock.json"
+    ],
+    "linters": {
+      "*.{ts,tsx}": [
+        "tslint -s node_modules/custom-tslint-formatters/formatters -t grouped --fix",
+        "git add"
+      ],
+      "*.css": [
+        "stylelint --fix",
+        "git add"
+      ],
+      "*.{ts,tsx,json,css,md}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-css-modules",
+      "stylelint-config-prettier"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!<rootDir>/graphql/**/*",
+      "!<rootDir>/types/**/*",
+      "!<rootDir>/app/components/ContentLoaders/**/*",
+      "!<rootDir>/app/components/GoogleAds/**/*"
+    ],
+    "globals": {
+      "window": true,
+      "googletag": true
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/**/?(*.)test.{ts,tsx}"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-typescript": "^7.1.0",
+    "@types/classnames": "^2.2.6",
+    "@types/doubleclick-gpt": "^238.0.0",
+    "@types/enzyme": "^3.1.16",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.13",
+    "@types/js-cookie": "^2.2.0",
+    "@types/memory-cache": "^0.2.0",
+    "@types/next": "^7.0.5",
+    "@types/react": "^16.8.2",
+    "@types/react-content-loader": "^3.1.4",
+    "@types/react-css-modules": "^4.6.2",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "apollo-boost": "^0.1.27",
+    "apollo-link-persisted-queries": "^0.2.2",
+    "autoprefixer": "^9.3.1",
+    "babel-plugin-react-css-modules": "^5.0.0",
+    "classnames": "^2.2.6",
+    "cross-env": "^5.2.0",
+    "dayjs": "^1.7.8",
+    "dotenv": "^6.1.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "express": "^4.16.4",
+    "graphql": "^14.1.1",
+    "identity-obj-proxy": "^3.0.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "jest": "^23.6.0",
+    "jest-localstorage-mock": "^2.4.0",
+    "js-cookie": "^2.2.0",
+    "jsdom": "13.2.0",
+    "jsdom-global": "3.0.2",
+    "memory-cache": "^0.2.0",
+    "mock-fs": "^4.7.0",
+    "next": "^7.0.2",
+    "normalize.css": "^8.0.1",
+    "pino": "^5.11.1",
+    "pino-pretty": "^2.5.0",
+    "postcss-color-function": "^4.0.1",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.4.0",
+    "react": "^16.8.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-apollo": "^2.4.1",
+    "react-content-loader": "^3.4.2",
+    "react-dom": "^16.8.1",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.1.6",
+    "winston": "^3.2.1",
+    "winston-transport": "^4.3.0"
+  },
+  "devDependencies": {
+    "apollo": "^2.4.4",
+    "custom-tslint-formatters": "^2.4.0",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "nodemon": "^1.18.9",
+    "prettier": "1.15.2",
+    "stylelint": "^9.9.0",
+    "stylelint-config-css-modules": "^1.3.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-react": "^3.6.0",
+    "webpack-bundle-analyzer": "^3.0.3"
+  }
+}
