@@ -1,0 +1,74 @@
+.container {
+  composes: panel from '../../../styles/composable.css';
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--gutter);
+  margin-right: var(--gutter);
+
+  @media (--viewport-medium) {
+    flex-direction: row;
+  }
+}
+
+.article {
+  border-bottom: 1px solid #b3b3b3;
+
+  @media (--viewport-medium) {
+    flex-basis: calc(50% - (var(--gutter) * 0.5));
+
+    &:nth-of-type(odd) {
+      margin-right: var(--gutter);
+    }
+  }
+}
+
+.articles__one {
+  display: flex;
+  flex-direction: column;
+
+  & [data-article-description='true'] {
+    display: none;
+  }
+
+  @media (--viewport-medium) {
+    flex-direction: row;
+    flex: 2;
+    margin-right: var(--gutter);
+
+    & [data-article-description='true'] {
+      display: block;
+    }
+
+    & .article {
+      border-bottom: none;
+    }
+  }
+}
+
+.articles__two {
+  display: flex;
+  flex-wrap: wrap;
+
+  & .article:last-child {
+    border-bottom: none;
+  }
+
+  @media (--viewport-medium) {
+    flex: 2;
+
+    & [data-article-image='true'] {
+      display: none;
+    }
+
+    & .article:nth-child(n + 5) {
+      border-bottom: none;
+    }
+  }
+}
+
+.news-link {
+  composes: arrow-icon-link from '../../../styles/composable.css';
+}

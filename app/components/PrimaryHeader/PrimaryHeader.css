@@ -1,0 +1,146 @@
+.secondary-nav-visible {
+  margin-bottom: calc(var(--primaryNavItemHeight) + var(--gutter));
+}
+
+.tophat {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #ecebec;
+  height: 50px;
+  padding: 0 1rem;
+
+  @media (--viewport-large) {
+    justify-content: space-between;
+  }
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+
+  & .item {
+    margin-left: 0.5rem;
+  }
+}
+
+.open {
+  transform: rotate(180deg);
+}
+
+.logo {
+  display: flex;
+  flex: 1;
+  margin: 0;
+
+  & a {
+    height: 33px;
+  }
+
+  & img {
+    width: auto;
+    height: 33px;
+  }
+
+  @media (--viewport-medium) {
+    justify-content: center;
+  }
+
+  @media (--viewport-large) {
+    align-self: flex-end;
+    flex: 1;
+
+    & a {
+      height: 45px;
+    }
+
+    & img {
+      height: 45px;
+    }
+  }
+}
+
+.links {
+  display: none;
+
+  & a {
+    color: #4a4a4a;
+    font-size: 0.89rem;
+    margin-right: 1rem;
+    text-transform: lowercase;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (--viewport-large) {
+    display: flex;
+  }
+}
+
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #979797;
+  display: flex;
+  height: 60px;
+  padding: 0.44rem 0;
+  align-items: center;
+
+  @media (--viewport-large) {
+    height: 104px;
+    border-bottom: none;
+    padding-bottom: 1.38rem;
+  }
+}
+
+.hamburger {
+  border: none;
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0.55rem;
+  position: relative;
+
+  & span:not(.screenreader-only),
+  &::before,
+  &::after {
+    display: block;
+    position: relative;
+    content: '';
+    background-color: #222;
+    border-radius: 20%;
+    width: 100%;
+    height: 3px;
+  }
+
+  &::before {
+    margin-bottom: 4px;
+  }
+
+  &::after {
+    margin-top: 4px;
+  }
+
+  @media (--viewport-large) {
+    visibility: hidden;
+    flex: 1;
+    order: 3;
+  }
+}
+
+.weather {
+  @media (--viewport-large) {
+    display: flex;
+    order: -1;
+    flex: 1;
+    height: 45px;
+    align-self: flex-end;
+  }
+}
+
+.screenreader-only {
+  composes: screenreader-only from '../../../styles/composable.css';
+}

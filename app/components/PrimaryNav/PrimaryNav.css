@@ -1,0 +1,133 @@
+.container {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out;
+  z-index: 1;
+
+  @media (--viewport-medium) {
+    width: 66vw;
+    transform: translateX(-66vw);
+  }
+
+  @media (--viewport-large) {
+    border-top: 1px solid #979797;
+    border-bottom: 1px solid #979797;
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: none;
+    transform: translateX(0);
+  }
+}
+
+.container--visible {
+  transform: translateX(0);
+  box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.18), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+  @media (--viewport-large) {
+    box-shadow: none;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media (--viewport-large) {
+    flex-direction: row;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0.5rem;
+
+  @media (--viewport-large) {
+    display: none;
+  }
+}
+
+.logo {
+  display: block;
+
+  & img {
+    width: auto;
+    height: 33px;
+  }
+}
+
+.btnclose {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    background-color: #222;
+    border-radius: 30%;
+    width: 100%;
+    height: 3px;
+    transform-origin: center center;
+  }
+
+  &::before {
+    transform: scale(0.8) rotate(45deg);
+  }
+
+  &::after {
+    transform: scale(0.8) rotate(-45deg);
+  }
+}
+
+.blocker {
+  background: rgba(50, 50, 50, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  @media (--viewport-large) {
+    display: none;
+  }
+}
+
+:global .nav-blocker-enter {
+  opacity: 0.01;
+}
+
+:global .nav-blocker-enter.nav-blocker-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+:global .nav-blocker-leave {
+  opacity: 1;
+}
+
+:global .nav-blocker-leave.nav-blocker-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.screenreader-only {
+  composes: screenreader-only from '../../../styles/composable.css';
+}

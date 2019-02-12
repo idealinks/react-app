@@ -1,0 +1,52 @@
+.container {
+  composes: panel from '../../../styles/composable.css';
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-left: var(--gutter);
+  margin-right: var(--gutter);
+
+  @media (--viewport-medium) {
+    flex-direction: row;
+  }
+}
+
+.article {
+  border-bottom: 1px solid #b3b3b3;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  @media (--viewport-medium) {
+    border-bottom: none;
+    flex: 1;
+    margin-right: var(--gutter);
+
+    &:nth-of-type(3) {
+      margin-right: 0;
+    }
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+
+  @media (--viewport-large) {
+    &:nth-of-type(3) {
+      margin-right: var(--gutter);
+    }
+
+    &:last-of-type {
+      display: block;
+      margin-right: 0;
+    }
+  }
+}
+
+.news-link {
+  composes: arrow-icon-link from '../../../styles/composable.css';
+}

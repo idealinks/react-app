@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewport-medium) {
+    flex-direction: row;
+  }
+}
+
+.col-left {
+  flex: 1;
+  margin-right: 0;
+
+  & > * {
+    margin-bottom: var(--gutter);
+  }
+
+  @media (--viewport-medium) {
+    margin-right: var(--gutter);
+  }
+}
+
+.col-right {
+  & > * {
+    margin-bottom: var(--gutter);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (--viewport-medium) {
+    width: 300px;
+  }
+}

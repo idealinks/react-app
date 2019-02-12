@@ -1,0 +1,9 @@
+.button {
+  composes: filled-btn from '../../../styles/buttons.css';
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}

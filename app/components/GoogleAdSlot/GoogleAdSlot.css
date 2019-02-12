@@ -1,0 +1,15 @@
+.adslot--centered {
+  text-align: center;
+}
+
+.sticky-bottom {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+
+  & .adslot {
+    position: fixed;
+    bottom: 0;
+  }
+}

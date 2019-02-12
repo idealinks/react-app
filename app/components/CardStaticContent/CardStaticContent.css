@@ -1,0 +1,20 @@
+.container {
+  composes: panel from '../../../styles/composable.css';
+  min-height: 250px;
+}
+
+.loader {
+  border-top: 1px solid #b3b3b3;
+}
+
+.error {
+  display: flex;
+  border-top: 1px solid #b3b3b3;
+}
+
+.body,
+.loader,
+.error {
+  background-color: #fff;
+  padding: var(--gutter);
+}

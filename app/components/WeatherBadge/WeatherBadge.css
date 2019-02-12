@@ -1,0 +1,34 @@
+.link {
+  display: flex;
+  color: #4a4a4a;
+  font-size: 0.89rem;
+  font-weight: var(--semiBoldWeight);
+  padding: 0 var(--gutter);
+  align-items: center;
+
+  &:hover {
+    color: #4a4a4a;
+    text-decoration: none;
+  }
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+.date {
+  display: none;
+
+  &::before {
+    display: inline-block;
+    color: #979797;
+    content: '|';
+    margin: 0 0.25rem 0 0.5rem;
+  }
+
+  @media (--viewport-large) {
+    display: inline-block;
+  }
+}

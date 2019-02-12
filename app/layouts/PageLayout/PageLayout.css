@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+
+  @media (--viewport-large) {
+    max-width: 1175px;
+    margin: 0 auto;
+  }
+}
+
+.masthead {
+  text-align: center;
+
+  @media (--viewport-medium) {
+    margin-top: var(--gutter);
+    margin-bottom: var(--gutter);
+  }
+}
+
+.content {
+  margin-bottom: var(--gutter);
+
+  & > * {
+    margin-bottom: var(--gutter);
+  }
+
+  @media (--viewport-large) {
+    margin-top: var(--gutter);
+  }
+}

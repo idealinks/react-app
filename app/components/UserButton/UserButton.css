@@ -1,0 +1,86 @@
+.user-button {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #063;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding-left: 0 !important;
+
+  &:focus,
+  &:hover {
+    border: 1px solid transparent;
+    outline: 0;
+  }
+}
+
+.user-image {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.chevron {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.down {
+  transform: rotate(180deg);
+}
+
+.usermenu-container {
+  @media (--viewport-large) {
+    position: relative;
+  }
+}
+
+.user-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.3175rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  @media (--viewport-large) {
+    border-radius: 0.3175rem;
+    outline: 0;
+    padding-right: 1rem;
+    z-index: var(--user-button-zindex);
+  }
+
+  &:focus,
+  &:hover {
+    border-radius: 0.3175rem;
+    outline: 0;
+
+    @media (--viewport-large) {
+      border: 1px solid #063;
+    }
+  }
+}
+
+.sign-in {
+  composes: bordered-btn from '../../../styles/buttons.css';
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--user-menu-overlay-zindex);
+  background-color: black;
+  opacity: 0.5;
+
+  @media (--viewport-large) {
+    background-color: transparent;
+  }
+}
+
+.invisible {
+  display: none;
+}
