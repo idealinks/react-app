@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="8px" viewBox="0 0 14 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Expand Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd">
+        <g id="Expand-Copy" transform="translate(-5.000000, -8.000000)">
+            <rect id="Rectangle-9" x="0" y="0" width="24" height="24"></rect>
+            <path d="M7.01975366,8.34497987 L11.5958969,12.9211232 L16.1720402,8.34497987 C16.6320134,7.88500671 17.375047,7.88500671 17.8350201,8.34497987 C18.2949933,8.80495304 18.2949933,9.54798661 17.8350201,10.0079598 L12.4214898,15.4214901 C11.9615166,15.8814633 11.2184831,15.8814633 10.7585099,15.4214901 L5.34497957,10.0079598 C4.88500641,9.54798661 4.88500641,8.80495304 5.34497957,8.34497987 C5.80495274,7.89680089 6.5597805,7.88500671 7.01975366,8.34497987 Z" id="Shape" fill="#063" transform="translate(11.590000, 11.883235) rotate(-180.000000) translate(-11.590000, -11.883235) "></path>
+        </g>
+    </g>
+</svg>

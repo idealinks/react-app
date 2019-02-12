@@ -1,0 +1,73 @@
+@import 'normalize.css';
+
+@custom-media --viewport-medium (min-width: 43rem);
+@custom-media --viewport-large (min-width: 57rem);
+
+:root {
+  --semiboldWeight: 700;
+  --boldWeight: 900;
+  --gutter: 0.84rem;
+  --primaryNavItemHeight: 45px;
+  --user-button-zindex: 1000;
+  --user-menu-overlay-zindex: 900;
+  --user-menu-zindex: 1000;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.29px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #222;
+  background-color: #f6f6f6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #1b8644;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #1b8644;
+  text-decoration: underline;
+}
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+.screenreader-only {
+  position: absolute !important; /* Outside the DOM flow */
+  height: 1px;
+  width: 1px; /* Nearly collapsed */
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE 7+ only support clip without commas */
+  clip: rect(1px, 1px, 1px, 1px); /* All other browsers */
+}
+
+.panel {
+  background-color: #fff;
+  border-right: 1px solid #b3b3b3;
+  border-bottom: 1px solid #b3b3b3;
+  border-left: 1px solid #b3b3b3;
+}
+
+.arrow-icon-link {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 0.89rem;
+  transition: color 0.3s ease-out;
+
+  & * {
+    flex: 0;
+  }
+
+  &:hover {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &::before {
+    background-image: url(/static/images/icon-circle-arrow.svg);
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 0.25rem;
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Communities/Icon/Social/Fb/Default</title>
+    <desc>Created with Sketch.</desc>
+    <g id="FOOTER" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ASSET-Sheet-DESKTOP" transform="translate(-100.000000, -1424.000000)">
+            <g id="Communities/Icon/Social/Fb/Default" transform="translate(100.000000, 1424.000000)">
+                <g id="Communities/Icon/Social/Fb/Default-Copy">
+                    <g id="Facebook">
+                        <circle id="Oval-2" fill="#006633" cx="18" cy="18" r="17"></circle>
+                        <path d="M0,18 C0,8.05887401 8.05887401,0 18,0 C27.941126,0 36,8.05887401 36,18 C36,27.941126 27.941126,36 18,36 C8.05887401,36 0,27.941126 0,18 Z M19.2761663,27.9836075 L19.2761663,18.1906572 L21.9794489,18.1906572 L22.3376922,14.8159523 L19.2761663,14.8159523 L19.2807592,13.12688 C19.2807592,12.246705 19.3643876,11.7750871 20.6285731,11.7750871 L22.3185553,11.7750871 L22.3185553,8.4 L19.61489,8.4 C16.3673531,8.4 15.2243043,10.037095 15.2243043,12.7901739 L15.2243043,14.8163345 L13.2,14.8163345 L13.2,18.1910394 L15.2243043,18.1910394 L15.2243043,27.9836075 L19.2761663,27.9836075 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

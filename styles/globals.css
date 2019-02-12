@@ -1,0 +1,27 @@
+:global {
+  /* BREAKPOINT HELPERS */
+  & .bp-small-show {
+    display: block;
+
+    @media (--viewport-medium) {
+      display: none;
+    }
+  }
+
+  & .bp-medium-up-show {
+    display: none;
+
+    @media (--viewport-medium) {
+      display: block;
+    }
+  }
+
+  /* SPACING HELPERS */
+  & .spacing-pad-all {
+    padding: var(--gutter);
+  }
+
+  & .spacing-margin-bottom {
+    margin-bottom: var(--gutter);
+  }
+}

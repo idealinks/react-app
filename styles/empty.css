@@ -1,0 +1,11 @@
+/* 
+This empty css file is needed to get around a known issue in next.js
+that is detailed in the following github issue: 
+https://github.com/zeit/next-plugins/issues/282#issuecomment-432127816
+
+This is the source where this workaround was taken from.
+https://with-css-modules-nhesxgevhn.now.sh/_src 
+
+We should monitor this issue, and hopefully sometime soon a proper 
+fix will be released.
+*/
